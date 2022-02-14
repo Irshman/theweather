@@ -56,7 +56,6 @@ async function init() {
     })
 };
 
-
 init();
 
 setInterval(() => {
