@@ -33,19 +33,19 @@ async function init() {
 
         if(getWether === 'Rain') {
             document.body.style.background = 
-        'url(../img/rain.jpg) center / cover no-repeat';
+        'url(./img/rain.jpg) center / cover no-repeat';
         } else if(getWether === 'Clear') {
             document.body.style.background = 
-        'url(../img/sunny.jpg) center / cover no-repeat';
+        'url(./img/sunny.jpg) center / cover no-repeat';
         } else if(getWether === 'Extreme') {
             document.body.style.background = 
-        'url(../img/thand.jpg) center / cover no-repeat';
+        'url(./img/thand.jpg) center / cover no-repeat';
         } else if(getWether === 'Snow') {
             document.body.style.background = 
-        'url(../img/snowy.jpg) center / cover no-repeat';
+        'url(./img/snowy.jpg) center / cover no-repeat';
         } else {
             document.body.style.background = 
-        'url(../img/always.jpg) center / cover no-repeat';
+        'url(./img/always.jpg) center / cover no-repeat';
         }
 
         function temperature() {
