@@ -20,7 +20,7 @@ btn.addEventListener('click', () => {
 })
 
 async function init() {
-    await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=c05f4ef647660e16f03781574660274c`)
+    await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=c05f4ef647660e16f03781574660274c`)
     .then(resp => { return resp.json()})
     .then(data => {
         nameCity.innerHTML = data.name;
