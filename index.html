@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link type="image/x-icon" href="./img/favicon.ico" rel="shortcut icon">
+    <title>The weather</title>
+</head>
+<body>
+
+    <main class="page">
+        <div class="page__container weather-page">
+            <form>
+                <div class="weather-page__input">
+                    <input id="enterCity" type="text" placeholder="Enter city">
+                </div>
+                <input class="weather-page__btn" type="button" value="Кнопка">
+            </form>
+            <div class="weather-page__main">
+                <h1 class="weather-page__title">Kiev</h1>
+                <div class="weather-page__description">Clear</div>
+                <div class="weather-page__deg">21</div>
+                <div class="weather-page__wind-speed"></div>
+                <div class="weather-page__pressure"></div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="https://kit.fontawesome.com/509657b079.js" crossorigin="anonymous"></script>
+    <script src="./scripts/script.js"></script>
+</body>
+</html>
