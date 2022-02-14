@@ -54,11 +54,11 @@ async function init() {
             return tempC
         }
     })
-}
+};
 
 
 init();
 
 setInterval(() => {
     init()
-}, 10000);
+}, 30000);
