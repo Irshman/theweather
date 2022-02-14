@@ -33,7 +33,7 @@ async function init() {
 
         if(getWether === 'Rain') {
             document.body.style.background = 
-        'url(../img/rain.jpg)';
+        'url(../img/rain.jpg) center / cover no-repeat';
         } else if(getWether === 'Clear') {
             document.body.style.background = 
         'url(../img/sunny.jpg) center / cover no-repeat';
