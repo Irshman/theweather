@@ -9,8 +9,6 @@ let cityTemp = document.querySelector(".weather-page__deg");
 let cityWindSpeed = document.querySelector(".weather-page__wind-speed");
 let pressure = document.querySelector(".weather-page__pressure");
 
-
-
 let city = 'London';
 
 btn.addEventListener('click', () => {
@@ -21,8 +19,8 @@ btn.addEventListener('click', () => {
     }
 })
 
-function init() {
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=c05f4ef647660e16f03781574660274c`)
+async function init() {
+    await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=c05f4ef647660e16f03781574660274c`)
     .then(resp => { return resp.json()})
     .then(data => {
         nameCity.innerHTML = data.name;
@@ -30,9 +28,7 @@ function init() {
         cityTemp.innerHTML = `${temperature()}°`;
         cityWindSpeed.innerHTML = `Wind speed: ${data.wind.speed} m/s`;
         pressure.innerHTML = `Pressure: ${data.main.pressure} hPa`;
-
-        console.log(data);
-
+        
         let getWether = data.weather[0].main;
 
         if(getWether === 'Rain') {
@@ -52,8 +48,6 @@ function init() {
         'url(../img/always.jpg) center / cover no-repeat';
         }
 
-    
-
         function temperature() {
             let getTemp = data.main.temp;
             let tempC = Math.floor(getTemp) - 273;
@@ -61,6 +55,7 @@ function init() {
         }
     })
 }
+
 
 init();
 
