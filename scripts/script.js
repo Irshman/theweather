@@ -45,7 +45,7 @@ async function init() {
         'url(../img/snowy.jpg) center / cover no-repeat';
         } else {
             document.body.style.background = 
-        'url(../img/always.jpg) center / cover no-repeat';
+        'url(https://github.com/Irshman/theweather/blob/main/img/always.jpg) center / cover no-repeat';
         }
 
         function temperature() {
