@@ -33,16 +33,16 @@ async function init() {
 
         if(getWether === 'Rain') {
             document.body.style.background = 
-        'url(../img/rain.jpg) center / cover no-repeat';
+        'url(ttps://github.com/Irshman/theweather/blob/main/img/rain.jpg) center / cover no-repeat';
         } else if(getWether === 'Clear') {
             document.body.style.background = 
-        'url(../img/sunny.jpg) center / cover no-repeat';
+        'url(ttps://github.com/Irshman/theweather/blob/main/img/sunny.jpg) center / cover no-repeat';
         } else if(getWether === 'Extreme') {
             document.body.style.background = 
-        'url(../img/thand.jpg) center / cover no-repeat';
+        'url(ttps://github.com/Irshman/theweather/blob/main/img/thand.jpg) center / cover no-repeat';
         } else if(getWether === 'Snow') {
             document.body.style.background = 
-        'url(../img/snowy.jpg) center / cover no-repeat';
+        'url(ttps://github.com/Irshman/theweather/blob/main/img/snowy.jpg) center / cover no-repeat';
         } else {
             document.body.style.background = 
         'url(https://github.com/Irshman/theweather/blob/main/img/always.jpg) center / cover no-repeat';
