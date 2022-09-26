@@ -1,0 +1,357 @@
+body {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-family: "Prompt", sans-serif;
+  font-weight: 400;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.weather-page {
+  padding-top: 60px;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 480px) {
+  .weather-page {
+    padding: 60px 10px;
+  }
+}
+.weather-page form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 15px;
+  width: 100%;
+}
+.weather-page__input {
+  background-color: #fff;
+  max-width: 300px;
+  width: 100%;
+  height: 45px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+@media (max-width: 480px) {
+  .weather-page__input {
+    width: 260px;
+  }
+}
+.weather-page__speak {
+  background-color: transparent;
+  border: none;
+  height: 100%;
+  width: 15%;
+  position: relative;
+  display: block;
+  transition: all 0.3s linear;
+  z-index: 1;
+  font-size: 18px;
+  transition: all 0.3s linear;
+}
+.weather-page__speak:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+.weather-page__speak--active svg g path {
+  fill: rgb(178, 0, 0) !important;
+}
+.weather-page__search {
+  background-color: transparent;
+  border: none;
+  width: 85%;
+  height: 100%;
+  font-size: 20px;
+  -webkit-box-shadow: inset 0 0 0 50px #fff;
+  -webkit-text-fill-color: #000;
+}
+.weather-page__search:focus {
+  outline: none;
+}
+.weather-page__search::-moz-placeholder {
+  color: rgba(74, 74, 74, 0.712);
+}
+.weather-page__search:-ms-input-placeholder {
+  color: rgba(74, 74, 74, 0.712);
+}
+.weather-page__search::placeholder {
+  color: rgba(74, 74, 74, 0.712);
+}
+@media (max-width: 480px) {
+  .weather-page__search::-moz-placeholder {
+    font-size: 16px;
+  }
+  .weather-page__search:-ms-input-placeholder {
+    font-size: 16px;
+  }
+  .weather-page__search::placeholder {
+    font-size: 16px;
+  }
+}
+.weather-page__btn {
+  border: none;
+  background-color: #fff;
+  color: #000;
+  width: 150px;
+  height: 40px;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: all 0.5s linear;
+}
+@media (max-width: 480px) {
+  .weather-page__btn {
+    font-size: 16px;
+    width: 280px;
+  }
+}
+@media (any-hover: hover) {
+  .weather-page__btn:hover {
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+  }
+}
+.weather-page__main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 30px;
+  background-color: rgba(44, 44, 44, 0.493);
+  border-radius: 10px;
+  min-width: 300px;
+  min-height: 300px;
+}
+@media (max-width: 480px) {
+  .weather-page__main {
+    padding: 20px 10px;
+    min-width: 300px;
+  }
+}
+.weather-page__title {
+  font-size: 46px;
+  margin-bottom: 0px;
+}
+@media (max-width: 480px) {
+  .weather-page__title {
+    font-size: 42px;
+  }
+}
+.weather-page__description {
+  font-size: 28px;
+  text-transform: uppercase;
+}
+@media (max-width: 480px) {
+  .weather-page__description {
+    font-size: 24px;
+  }
+}
+.weather-page__deg {
+  font-size: 58px;
+}
+@media (max-width: 480px) {
+  .weather-page__deg {
+    font-size: 42px;
+  }
+}
+.weather-page__main {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+.weather-page__wind-speed {
+  font-size: 22px;
+}
+@media (max-width: 480px) {
+  .weather-page__wind-speed {
+    font-size: 18px;
+  }
+}
+.weather-page__pressure {
+  font-size: 22px;
+}
+@media (max-width: 480px) {
+  .weather-page__pressure {
+    font-size: 18px;
+  }
+}
+
+.preloader-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  height: 100%;
+  width: 100%;
+  background-color: #3d3d3d;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.5s linear;
+  z-index: 999;
+}
+.preloader-wrap--done {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.preloader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  height: 0;
+  width: 25%;
+  padding-bottom: 25%;
+}
+
+.preloader-top {
+  position: absolute;
+  width: 100%;
+  height: 75%;
+  top: 0;
+  overflow: hidden;
+}
+
+.preloader-top-sun {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  height: 0;
+  width: 35%;
+  padding-bottom: 35%;
+  -webkit-animation: preloader 3s ease infinite;
+          animation: preloader 3s ease infinite;
+}
+
+.preloader-top-sun-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  border: 5px solid gold;
+  box-sizing: border-box;
+}
+
+.preloader-top-sun-line {
+  position: absolute;
+  width: 20%;
+  height: 5px;
+  border-radius: 5px;
+  background: gold;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.preloader-top-sun-line-0 {
+  transform: rotate(0deg) translateX(-350%);
+}
+
+.preloader-top-sun-line-45 {
+  transform: rotate(45deg) translateX(-350%);
+}
+
+.preloader-top-sun-line-90 {
+  transform: rotate(90deg) translateX(-350%);
+}
+
+.preloader-top-sun-line-135 {
+  transform: rotate(135deg) translateX(-350%);
+}
+
+.preloader-top-sun-line-180 {
+  transform: rotate(180deg) translateX(-350%);
+}
+
+.preloader-top-sun-line-225 {
+  transform: rotate(225deg) translateX(-350%);
+}
+
+.preloader-top-sun-line-270 {
+  transform: rotate(270deg) translateX(-350%);
+}
+
+.preloader-top-sun-line-315 {
+  transform: rotate(315deg) translateX(-350%);
+}
+
+.preloader-bottom {
+  position: absolute;
+  width: 100%;
+  height: 25%;
+  bottom: 0;
+}
+
+.preloader-bottom-line {
+  position: absolute;
+  background: gold;
+  height: 5px;
+  border-radius: 5px;
+  margin: auto;
+  left: 0;
+  right: 0;
+}
+
+.preloader-bottom-line-lg {
+  width: 100%;
+  top: 0%;
+}
+
+.preloader-bottom-line-md {
+  width: 75%;
+  top: 25%;
+}
+
+.preloader-bottom-line-sm {
+  width: 50%;
+  top: 50%;
+}
+
+.preloader-bottom-line-xs {
+  width: 25%;
+  top: 75%;
+}
+
+@-webkit-keyframes preloader {
+  0% {
+    transform: translateY(200%) rotate(0deg);
+  }
+  25% {
+    transform: translateY(0) rotate(0deg);
+    transition-timing-function: ease-out;
+  }
+  100% {
+    transform: translateY(200%) rotate(-180deg);
+    transition-timing-function: ease-in;
+  }
+}
+
+@keyframes preloader {
+  0% {
+    transform: translateY(200%) rotate(0deg);
+  }
+  25% {
+    transform: translateY(0) rotate(0deg);
+    transition-timing-function: ease-out;
+  }
+  100% {
+    transform: translateY(200%) rotate(-180deg);
+    transition-timing-function: ease-in;
+  }
+}/*# sourceMappingURL=style.css.map */
